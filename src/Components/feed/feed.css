@@ -1,0 +1,126 @@
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #1e1e1e; /* Matches the dark background */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #ff6b6b; /* Vibrant red to match the accent color */
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ff4d4d; /* Slightly brighter red on hover */
+  }
+  
+  .feed-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 70px 1fr;
+    grid-template-areas: 
+    'side-bar side-bar side-bar side-bar side-bar side-bar side-bar side-bar side-bar side-bar side-bar side-bar'
+    'main main main main main main main main main main main main' ;
+}
+
+.side-bar {
+    grid-area: side-bar;
+}
+
+.main {
+    grid-area: main;
+}
+
+.side-bar-btn:hover{
+    background-color: rgb(248 113 113);
+}
+.side-bar-btn:hover .cat-name{
+    color: white !important
+}
+.side-bar-btn:hover .cat-icon{
+    color: white !important
+}
+
+.linktype:hover{
+    color: rgb(110, 110, 110);
+    text-decoration: underline;
+}
+
+
+
+
+.vidoe{
+    grid-area: vidoe;
+}
+.suggestions{
+    grid-area: sug;
+}
+.comments{
+    grid-area: com;
+}
+
+
+
+
+@media (min-width: 1000px) {
+
+
+    .feed-container {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 1fr;
+        grid-template-areas: 'side-bar side-bar main main main main main main main main main main';
+    }
+
+    .side-bar {
+        grid-area: side-bar;
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        height: 92vh;
+        position: sticky;
+        bottom: 0;
+        left: 0;
+        top: 64px;
+    }
+
+    .main {
+        grid-area: main;
+    }
+
+    .side-bar-btn{
+        height: 7rem;
+    }
+    
+}
+
+@media (min-width: 1200px) {
+    .feed-container {
+        display: grid;
+        grid-template-columns: repeat(20, 1fr);
+        grid-template-rows: 1fr;
+        grid-template-areas: 'side-bar side-bar side-bar main main main main main main main main main main main main main main main main main';
+    }
+
+    .side-bar {
+        grid-area: side-bar;
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        height: 92vh;
+        position: sticky;
+        bottom: 0;
+        left: 0;
+        top: 64px;
+    }
+
+    .main {
+        grid-area: main;
+    }
+
+    .side-bar-btn{
+        height: 6rem;
+    }
+}

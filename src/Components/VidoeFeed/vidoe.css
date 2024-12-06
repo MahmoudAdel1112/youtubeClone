@@ -1,0 +1,28 @@
+.video-container{
+    background-color: rgb(68, 68, 68);
+}
+
+@media (min-width: 500px) {
+    .video-container{
+        width: 45%;
+    }
+    .link-container{
+        width: 100%;
+    }
+    .video-thumbnail{
+        width: 100%;
+    }
+
+}
+
+@media (min-width: 1000px) {
+    .video-container{
+        width: 25%;
+    }
+    .link-container{
+        width: 100%;
+    }
+    .video-thumbnail{
+        width: 100%;
+    }
+}
