@@ -1,13 +1,13 @@
-# JB Media - YouTube Clone  
+# AC Media - YouTube Clone  
 
-Welcome to **JB Media**, my first major project built with **React**! This YouTube clone is designed to let users stream videos, explore channels, and discover a variety of exciting features. Working on this project has been an incredible learning experience that has boosted my passion for software development. I’m eager to continue building, improving, and growing as a developer.  
+Welcome to **AC Media**, my first major project built with **React**! This YouTube clone is designed to let users stream videos, explore channels, and discover a variety of exciting features. Working on this project has been an incredible learning experience that has boosted my passion for software development. I’m eager to continue building, improving, and growing as a developer.  
 
 ---
 
 ## 🌐 Live Demo  
 
 Check out the live version of the project here:  
-[**JB Media - Live Demo**](https://acmedia.netlify.app)
+[**AC Media - Live Demo**](https://acmedia.netlify.app)
 
 ---
 
