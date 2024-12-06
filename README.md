@@ -1,6 +1,6 @@
-# JB Media - YouTube Clone  
+# AC Media - YouTube Clone  
 
-Welcome to **JB Media**, my first major project built with **React**! This YouTube clone is designed to let users stream videos, explore channels, and discover a variety of exciting features. Working on this project has been an incredible learning experience that has boosted my passion for software development. I’m eager to continue building, improving, and growing as a developer.  
+Welcome to **AC Media**, my first major project built with **React**! This YouTube clone is designed to let users stream videos, explore channels, and discover a variety of exciting features. Working on this project has been an incredible learning experience that has boosted my passion for software development. I’m eager to continue building, improving, and growing as a developer.  
 
 ---
 
@@ -36,4 +36,4 @@ This project is just the beginning of my journey in web development. Here’s wh
 
 ## 🔥 Conclusion  
 
-I’m incredibly proud of **JB Media**, as it represents my first step into creating substantial projects as a developer. This project has helped me refine my technical skills and deepen my passion for building useful, user-friendly applications. I’m excited to take on new challenges, develop more ambitious projects, and continue growing in my software development journey.  
+I’m incredibly proud of **AC Media**, as it represents my first step into creating substantial projects as a developer. This project has helped me refine my technical skills and deepen my passion for building useful, user-friendly applications. I’m excited to take on new challenges, develop more ambitious projects, and continue growing in my software development journey.  
