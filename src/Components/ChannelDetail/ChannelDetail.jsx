@@ -32,7 +32,7 @@ const ChannelDetail = () => {
             <img
               src={
                 item.snippet.thumbnails.default.url ||
-                '/vite-project/src/assets/blank-profile-picture-973460_640.png'
+                '/Youtube_Clone/src/assets/blank-profile-picture-973460_640.png'
               }
               alt="channel logo"
               className="w-32 h-32 rounded-full shadow-lg"

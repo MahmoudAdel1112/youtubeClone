@@ -29,15 +29,15 @@ const VideoDetail = () => {
     }, [id]);
 
     return (
-        <div className="grid lg:grid-cols-3 gap-6 p-4 bg-black text-white">
+        <div className="p-4 bg-black text-white videoDetail-container">
             {/* Video Player Section */}
-            <div className="col-span-2">
-                <div className="bg-gray-900 rounded-md overflow-hidden shadow-lg">
-                    <ReactPlayer 
-                        url={`https://youtube.com/watch?v=${id}`} 
-                        controls 
-                        width="100%" 
-                        height="400px" 
+            <div className="video ">
+                <div className="bg-gray-900 rounded-md overflow-hidden shadow-lg w-full">
+                    <ReactPlayer
+                        url={`https://youtube.com/watch?v=${id}`}
+                        controls
+                        width="100%"
+                        height="400px"
                     />
                     {videoDetail?.map((item3) => (
                         <div key={item3.id} className="p-4">
@@ -46,8 +46,8 @@ const VideoDetail = () => {
                                 <h3 className="text-sm opacity-75">
                                     Views: {parseInt(item3.statistics.viewCount).toLocaleString()}
                                 </h3>
-                                <Link 
-                                    to={`/channel/${item3.snippet.channelId}`} 
+                                <Link
+                                    to={`/channel/${item3.snippet.channelId}`}
                                     className="text-sm bg-gray-700 px-3 py-1 rounded-lg hover:bg-gray-600"
                                 >
                                     {item3.snippet.channelTitle}
@@ -64,7 +64,7 @@ const VideoDetail = () => {
                                     <p className="text-sm opacity-75">
                                         Published on: {new Date(item3.snippet.publishedAt).toLocaleDateString()}
                                     </p>
-                                    <p className="mt-2" dangerouslySetInnerHTML={{ __html: item3.snippet.description}}></p>
+                                    <p className="mt-2" dangerouslySetInnerHTML={{ __html: item3.snippet.description }}></p>
                                 </div>
                             )}
                         </div>
@@ -73,20 +73,22 @@ const VideoDetail = () => {
             </div>
 
             {/* Related Videos */}
-            <div className="bg-gray-800 rounded-md shadow-lg p-4">
+            <div className="bg-gray-800 rounded-md shadow-lg p-4 suggestions">
                 <h2 className="text-lg font-semibold mb-4">Related Videos</h2>
-                <div className="space-y-4">
+                <div className="space-y-4 overflow-y-scroll">
                     {relatedVideos?.map((item) => (
-                        <Link 
-                            to={`/video/${item.id.videoId}`} 
-                            key={item.id.videoId} 
+                        <Link
+                            to={`/video/${item.id.videoId}`}
+                            key={item.id.videoId}
                             className="flex items-center gap-4 hover:bg-gray-700 p-2 rounded-md"
                         >
-                            <img 
-                                src={item.snippet.thumbnails.medium.url} 
-                                alt="video thumbnail" 
+                            <img
+                                src={item.snippet.thumbnails.medium.url}
+                                alt="video thumbnail"
                                 className="w-20 h-12 object-cover rounded"
+                                onError={(e) => (e.target.src = "/vite-project/public/business-vector-icon-quality-icon-mobile-web_720607-10963.jpg")}
                             />
+
                             <div>
                                 <h3 className="text-sm font-medium line-clamp-2">{item.snippet.title}</h3>
                                 <p className="text-xs text-gray-400">{item.snippet.channelTitle}</p>
@@ -97,17 +99,17 @@ const VideoDetail = () => {
             </div>
 
             {/* Comments Section */}
-            <div className="col-span-3 bg-gray-800 rounded-md shadow-lg p-4">
+            <div className=" bg-gray-800 rounded-md shadow-lg p-4 comments ">
                 <h2 className="text-lg font-semibold mb-4">Comments</h2>
-                <div className="space-y-4 max-h-96 overflow-y-auto">
+                <div className="space-y-4 overflow-y-scroll h-[1120px]">
                     {comments?.map((item4) => (
-                        <div 
-                            key={item4.id} 
+                        <div
+                            key={item4.id}
                             className="p-3 bg-gray-900 rounded-md flex gap-3 items-start"
                         >
-                            <img 
-                                src={item4.snippet.topLevelComment.snippet.authorProfileImageUrl} 
-                                alt="profile" 
+                            <img
+                                src={item4.snippet.topLevelComment.snippet.authorProfileImageUrl}
+                                alt="profile"
                                 className="w-10 h-10 rounded-full"
                             />
                             <div>
@@ -117,7 +119,7 @@ const VideoDetail = () => {
                                 <p className="text-xs text-gray-400">
                                     {new Date(item4.snippet.topLevelComment.snippet.publishedAt).toLocaleDateString()}
                                 </p>
-                                <p className="text-sm mt-1" dangerouslySetInnerHTML={{ __html: item4.snippet.topLevelComment.snippet.textDisplay}}></p>
+                                <p className="text-sm mt-1" dangerouslySetInnerHTML={{ __html: item4.snippet.topLevelComment.snippet.textDisplay }}></p>
                             </div>
                         </div>
                     ))}

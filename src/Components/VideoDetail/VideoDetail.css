@@ -1,57 +1,44 @@
-@media (max-width: 500px) {
-    .vidoeDetail-container {
+@media (max-width: 1000px) {
+    .videoDetail-container{
         display: grid;
-        grid-template-columns: 1fr; /* Single column on small screens */
-        grid-template-areas:
-            "vidoe"
-            "comments"
-            "suggestions";
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 'vid vid vid' 'sug sug sug' 'com com com';
+        gap: 2rem;
     }
-
-    .vidoe {
-        grid-area: vidoe;
+    .video {
+        grid-area: vid;
     }
 
     .comments {
-        grid-area: comments;
+        grid-area: com; 
+        border-top: 1px solid #333; 
+        padding-top: 1rem;
     }
 
     .suggestions {
-        grid-area: suggestions;
-    }
-}
-
-@media (min-width: 500px) {
-    .vidoeDetail-container {
-        display: grid;
-        grid-template-columns: 1fr; /* Video full width on medium screens */
-        grid-template-areas:
-            "vidoe"
-            "comments"
-            "suggestions";
+        grid-area: sug; 
     }
 }
 
 @media (min-width: 1000px) {
-    .vidoeDetail-container {
+    .videoDetail-container{
         display: grid;
-        grid-template-columns: 2fr 1fr 1fr; /* Larger screens split into three sections */
-        grid-template-areas:
-            "vidoe comments suggestions";
-        gap: 1rem;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 2ssfr);
+        grid-template-areas: 'vid vid sug' 'com com sug';
+        gap: 2rem;
     }
-
-    .vidoe {
-        grid-area: vidoe;
+    .video {
+        grid-area: vid; 
     }
 
     .comments {
-        grid-area: comments;
-        border-left: 1px solid #333; /* Optional: Separate visually */
-        padding-left: 1rem;
+        grid-area: com; 
+        border-top: 1px solid #333; 
+        padding-top: 1rem;
     }
 
     .suggestions {
-        grid-area: suggestions;
+        grid-area: sug;
     }
 }
