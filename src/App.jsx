@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'  
-import { Feed } from './Components/feed/Feed'
+import  Feed  from './Components/feed/Feed'
 import { Navbar } from './Components/Navbar/Navbar'
 import  VideoDetail  from './Components/VideoDetail/VideoDetail'
 import ChannelDetail from './Components/ChannelDetail/ChannelDetail'

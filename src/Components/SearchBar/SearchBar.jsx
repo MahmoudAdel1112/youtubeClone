@@ -12,6 +12,7 @@ export const SearchBar = () => {
 
     function handleSubmit(event) {
         event.preventDefault();
+        window.scroll(0,0);
 
         if(searchTerm){
             navigate(`/search/${searchTerm}`)

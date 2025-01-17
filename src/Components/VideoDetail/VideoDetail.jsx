@@ -13,6 +13,10 @@ const VideoDetail = () => {
     const [showDetails, setShowDetails] = useState(false);
     const [videoDetail, setVideoDetail] = useState([]);
 
+    function onClick(){
+        window.scroll(0,0)
+    }
+
     useEffect(() => {
         FetchFromApi(`https://youtube-v31.p.rapidapi.com/videos?part=contentDetails%2Csnippet%2Cstatistics&id=${id}`)
             .then((data3) => setVideoDetail(data3));
@@ -48,6 +52,7 @@ const VideoDetail = () => {
                                 </h3>
                                 <Link
                                     to={`/channel/${item3.snippet.channelId}`}
+                                    onClick={onClick}
                                     className="text-sm bg-gray-700 px-3 py-1 rounded-lg hover:bg-gray-600"
                                 >
                                     {item3.snippet.channelTitle}
@@ -80,10 +85,11 @@ const VideoDetail = () => {
                         <Link
                             to={`/video/${item.id.videoId}`}
                             key={item.id.videoId}
+                            onClick={onClick}
                             className="flex items-center gap-4 hover:bg-gray-700 p-2 rounded-md"
                         >
                             <img
-                                src={item.snippet.thumbnails.medium.url}
+                                src={item.snippet.thumbnails.medium?.url}
                                 alt="video thumbnail"
                                 className="w-20 h-12 object-cover rounded"
                                 onError={(e) => (e.target.src = "/vite-project/public/business-vector-icon-quality-icon-mobile-web_720607-10963.jpg")}
@@ -108,7 +114,7 @@ const VideoDetail = () => {
                             className="p-3 bg-gray-900 rounded-md flex gap-3 items-start"
                         >
                             <img
-                                src={item4.snippet.topLevelComment.snippet.authorProfileImageUrl}
+                                src={item4.snippet.topLevelComment.snippet?.authorProfileImageUrl}
                                 alt="profile"
                                 className="w-10 h-10 rounded-full"
                             />
